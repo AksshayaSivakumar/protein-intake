@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein & Carb Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-200 to-blue-300 min-h-screen flex items-center justify-center">
+
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">🍽️ Protein & Carb Tracker</h1>
+        <br>
+        <!-- FORM SECTION -->
+        <form id="intake-form" class="flex flex-col gap-4">
+            <label class="font-semibold text-lg">Select Food:</label>
+            <select id="food" class="border p-2 rounded">
+                <option value="chicken" data-img="/images/chicken.jpg">Chicken (27g Protein, 0g Carbs per 100g)</option>
+                <option value="egg" data-img="/images/egg.jpg">Egg (13g Protein, 1.1g Carbs per 100g)</option>
+                <option value="milk" data-img="/images/milk.jpg">Milk (3.4g Protein, 5g Carbs per 100g)</option>
+                <option value="paneer" data-img="/images/paneer.jpg">Paneer (18g Protein, 2g Carbs per 100g)</option>
+                <option value="rice" data-img="/images/rice.jpg">Rice (2.7g Protein, 28g Carbs per 100g)</option>
+                <option value="banana" data-img="/images/banana.jpg">Banana (1.3g Protein, 23g Carbs per 100g)</option>
+            </select>
+
+            <label class="font-semibold text-lg">Quantity (grams):</label>
+            <input type="number" id="quantity" class="border p-2 rounded" required>
+
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition">
+                ➕ Add Entry
+            </button>
+        </form>
+
+        <!-- IMAGE PREVIEW -->
+        <div class="flex justify-center mt-4">
+            <img id="food-image" src="/images/chicken.jpg" alt="Food Image" class="w-40 h-40 object-cover rounded-lg shadow-lg">
+        </div>
+
+        <!-- TOTALS SECTION -->
+        <div class="mt-6 p-4 bg-blue-100 rounded-lg text-center">
+            <h2 class="text-xl font-semibold">🔥 Total Protein: <span id="total-protein" class="text-blue-600">0</span>g</h2>
+            <h2 class="text-xl font-semibold">🥔 Total Carbs: <span id="total-carbs" class="text-blue-600">0</span>g</h2>
+        </div>
+
+        <!-- ENTRIES SECTION -->
+        <h2 class="text-xl font-semibold mt-6 text-gray-700">📋 Your Entries</h2>
+        <ul id="entries-list" class="mt-4 space-y-3"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
