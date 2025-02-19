@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function fetchEntries() {
-        const response = await fetch("http://localhost:5000/entries");
+        const response = await fetch("https://protein-tracker.onrender.com/entries");
         const data = await response.json();
         entriesList.innerHTML = "";
         totalProtein = 0;
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const proteinIntake = (quantity / 100) * foodData[food].protein;
         const carbIntake = (quantity / 100) * foodData[food].carbs;
 
-        await fetch("http://localhost:5000/add", {
+        await fetch("https://protein-tracker.onrender.com/add", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.deleteEntry = async (id) => {
-        await fetch(`http://localhost:5000/delete/${id}`, { method: "DELETE" });
+        await fetch(`https://protein-tracker.onrender.com/delete/${id}`, { method: "DELETE" });
         fetchEntries();
     };
 
